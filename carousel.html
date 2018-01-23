@@ -1,5 +1,5 @@
 <div id="master-wrapper">
-  <div id="title-navigation" class="col-sm-12 col-md-4">
+  <div id="title-navigation" class="col-sm-12 col-md-4 active-slide">
     <div class="title-nav-item col-sm-4 col-md-12" itemID="1">
       <h4>
         Conference Promotion
@@ -33,7 +33,7 @@
       <i onClick="rotateRight()" class="fa fa-chevron-right" aria-hidden="true"></i>
     </div>
     <div id="image-wrapper">
-      <div class="rotating-image" itemID="1"><img src="http://mamiskincare.net/wp-content/uploads/2015/11/inspire-fashion-ideas-for-styleator-concept-with-fashion-style-for-fall-2015-with-street-style-at-stockholm-fashion-week-fall-winter-2015-2016-15.jpg" /></div>
+      <div class="rotating-image" style="display: block;" itemID="1"><img src="http://mamiskincare.net/wp-content/uploads/2015/11/inspire-fashion-ideas-for-styleator-concept-with-fashion-style-for-fall-2015-with-street-style-at-stockholm-fashion-week-fall-winter-2015-2016-15.jpg" /></div>
       <div class="rotating-image" itemID="2"><img src="http://conversationsabouther.net/wp-content/uploads/2015/03/1-seoul-fashion-week-fall-2015-street-style-45.jpg" /></div>
       <div class="rotating-image" itemID="3"><img src="https://dosenyc.files.wordpress.com/2015/08/eleonora-sebastiani-and-roberto-mararo.jpg" /></div>
     </div>
@@ -41,6 +41,20 @@
 </div>
 
 <style media="screen">
+  .active-slide{
+    display: block;
+    border-bottom: 4px solid #3498db;
+    background-color: #fff !important;
+    color: #666666;
+  }
+
+  .inactive {
+    display: block;
+    background-color: '';
+    color: #666666;
+    border-bottom: none;
+  }
+
   @media (max-width: 991px){
     .inactive:after {
       width: 0 !important;
@@ -72,14 +86,6 @@
     .inactive {
       display: none !important;
     }
-  }
-
-  .active-slide{
-    display: block;
-  }
-
-  .inactive {
-    display: block;
   }
 
   .Container-1 .dnntitle {
@@ -193,72 +199,17 @@
 </style>
 
 <script type="text/javascript">
-  function setDefaults() {
-    $('.title-nav-item').addClass('inactive').removeClass('active-slide');
-    $('.rotating-image:first').fadeIn();
-    $('.title-nav-item:first').removeClass('inactive').addClass('active-slide');
-    if($('.chevs').css('display') === 'flex'){
-      $('.title-nav-item:first').css({
-        backgroundColor: '#fff',
-        color: '#666666',
-        borderBottom: 'none'
-      });
-    }else{
-      $('.title-nav-item:first').css({
-        backgroundColor: '#fff',
-        color: '#666666',
-        borderBottom: '4px solid #3498db'
-      });
-    }
-  }
-
   function rotateRight(){
     var visibleImage = $('.rotating-image:visible').next().attr('itemID');
     if ($('.rotating-image:visible').next().length === 0) {
       $('.rotating-image').hide();
-      $('.title-nav-item').css({
-        backgroundColor: '',
-        color: '#666666',
-        borderBottom: 'none'
-      });
       $('.title-nav-item').addClass('inactive').removeClass('active-slide');
       $('.rotating-image:first').fadeIn();
       $('.title-nav-item:first').removeClass('inactive').addClass('active-slide');
-      if($('.chevs').css('display') === 'flex'){
-        $('.title-nav-item:first').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: 'none'
-        });
-      }else{
-        $('.title-nav-item:first').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: '4px solid #3498db'
-        });
-      }
     } else {
-      $('.title-nav-item').css({
-        backgroundColor: '',
-        color: '#666666',
-        borderBottom: 'none'
-      });
       $('.title-nav-item').addClass('inactive').removeClass('active-slide');
       $('.rotating-image:visible').hide().next().fadeIn('fast');
       $('.title-nav-item[itemID="' + visibleImage + '"]').removeClass('inactive').addClass('active-slide');
-      if($('.chevs').css('display') === 'flex'){
-        $('.title-nav-item[itemID="' + visibleImage + '"]').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: 'none'
-        });
-      }else{
-        $('.title-nav-item[itemID="' + visibleImage + '"]').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: '4px solid #3498db'
-        });
-      }
     }
   }
 
@@ -266,49 +217,13 @@
     var visibleImage = $('.rotating-image:visible').prev().attr('itemID');
     if ($('.rotating-image:visible').prev().length === 0) {
       $('.rotating-image').hide();
-      $('.title-nav-item').css({
-        backgroundColor: '',
-        color: '#666666',
-        borderBottom: 'none'
-      });
       $('.title-nav-item').addClass('inactive').removeClass('active-slide');
       $('.rotating-image:last').fadeIn();
       $('.title-nav-item:last').removeClass('inactive').addClass('active-slide');
-      if($('.chevs').css('display') === 'flex'){
-        $('.title-nav-item:last').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: 'none'
-        });
-      }else{
-        $('.title-nav-item:last').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: '4px solid #3498db'
-        });
-      }
     } else {
-      $('.title-nav-item').css({
-        backgroundColor: '',
-        color: '#666666',
-        borderBottom: 'none'
-      });
       $('.title-nav-item').addClass('inactive').removeClass('active-slide');
       $('.rotating-image:visible').hide().prev().fadeIn('fast');
       $('.title-nav-item[itemID="' + visibleImage + '"]').removeClass('inactive').addClass('active-slide');
-      if($('.chevs').css('display') === 'flex'){
-        $('.title-nav-item[itemID="' + visibleImage + '"]').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: 'none'
-        });
-      }else{
-        $('.title-nav-item[itemID="' + visibleImage + '"]').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: '4px solid #3498db'
-        });
-      }
     }
   }
 
@@ -316,30 +231,12 @@
     //Item click event
     $('.title-nav-item').click(function() {
       //remove default colours
-      $('.title-nav-item').css({
-        backgroundColor: '',
-        color: '#666666',
-        borderBottom: 'none'
-      });
       $('.title-nav-item').addClass('inactive').removeClass('active-slide');
       $('.rotating-image').hide();
       //Show items based on matching ID's
       var itemID = $(this).attr('itemID');
       $('.rotating-image[itemID="' + itemID + '"]').fadeIn('fast');
       $('.title-nav-item[itemID="' + itemID + '"]').removeClass('inactive').addClass('active-slide');
-      if($('.chevs').css('display') === 'flex'){
-        $('.title-nav-item[itemID="' + itemID + '"]').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: 'none'
-        });
-      }else{
-        $('.title-nav-item[itemID="' + itemID + '"]').css({
-          backgroundColor: '#fff',
-          color: '#666666',
-          borderBottom: '4px solid #3498db'
-        });
-      }
     });
   }
 
@@ -351,7 +248,6 @@
 
 
   $(document).ready(function() {
-    setDefaults();
     itemClicks();
     autoRotate();
   });
