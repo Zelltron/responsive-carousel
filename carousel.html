@@ -1,28 +1,31 @@
 <div id="master-wrapper">
-  <div id="title-navigation" class="col-sm-12 col-md-4 active-slide">
-    <div class="title-nav-item col-sm-4 col-md-12" itemID="1">
+  <div id="title-navigation" class="col-sm-12 col-md-4">
+    <div class="title-nav-item col-sm-4 col-md-12 active-slide" itemID="1">
       <h4>
         Conference Promotion
       </h4>
-      <p style="font-size: 0.75em;">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum commodo elit, vitae pulvinar dolor cursus a.
       </p>
+      <a href="#" class="read-more-tab">READ MORE</a>
     </div>
     <div class="title-nav-item col-sm-4 col-md-12 inactive" itemID="2">
       <h4>
         Action Alert Deadline
       </h4>
-      <p style="font-size: 0.75em;">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum commodo elit, vitae pulvinar dolor cursus a.
       </p>
+      <a href="#" class="read-more-tab">READ MORE</a>
     </div>
     <div class="title-nav-item col-sm-4 col-md-12 inactive last-active" itemID="3">
       <h4>
         Timely Member Initiative
       </h4>
-      <p style="font-size: 0.75em;">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum commodo elit, vitae pulvinar dolor cursus a.
       </p>
+      <a href="#" class="read-more-tab">READ MORE</a>
     </div>
   </div>
 
@@ -40,12 +43,14 @@
   </div>
 </div>
 
+
 <style media="screen">
-  .active-slide{
+  .active-slide {
     display: block;
     border-bottom: 4px solid #3498db;
     background-color: #fff !important;
     color: #666666;
+    opacity: 1;
   }
 
   .inactive {
@@ -53,32 +58,44 @@
     background-color: '';
     color: #666666;
     border-bottom: none;
+    opacity: 0.7;
   }
 
-  @media (max-width: 991px){
+  @media (max-width: 991px) {
     .inactive:after {
       width: 0 !important;
     }
-    .title-nav-item:nth-child(2){
+    .title-nav-item:nth-child(2) {
       border-left: 1px solid #6666;
       border-right: 1px solid #6666;
     }
-
-    .active-slide{
+    .active-slide {
       border-bottom: 4px solid #3498db !important;
+    }
+    .title-nav-item {
+      padding: 0% 3% 5% 2% !important;
+    }
+    .title-nav-item h4 {
+      font-size: 17px !important;
+    }
+    .title-nav-item p {
+      font-size: 16px !important;
+    }
+    .read-more-tab{
+      font-size: 14px !important;
     }
   }
 
-  @media (max-width: 767px){
-    .title-nav-item:nth-child(2){
+  @media (max-width: 767px) {
+    .title-nav-item:nth-child(2) {
       border-left: none;
       border-right: none;
     }
-    .chevs{
+    .chevs {
       display: flex !important;
     }
 
-    .active-slide{
+    .active-slide {
       display: block !important;
       border-bottom: none !important;
     }
@@ -86,9 +103,17 @@
     .inactive {
       display: none !important;
     }
+
+    .read-more-tab{
+      display: none !important;
+    }
   }
 
-  .chevs{
+  .Container-1 .dnntitle {
+    border-bottom: none;
+  }
+
+  .chevs {
     position: absolute;
     z-index: 5;
     width: 100%;
@@ -131,7 +156,7 @@
   }
 
   .title-nav-item {
-    padding: 10px;
+    padding: 3% 9% 9% 5%;
     background-color: #EDEDED;
     cursor: pointer;
     color: #8F8F8F;
@@ -139,21 +164,39 @@
     position: relative;
   }
 
-  .title-nav-item h4{
+  .title-nav-item h4 {
     font-size: 21px;
     line-height: 26px;
     letter-spacing: 0.5px;
     font-weight: bold;
+    color: rgb(102, 102, 102);
   }
 
-  .title-nav-item p{
+  .title-nav-item p {
     font-size: 14px;
     line-height: normal;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: rgb(102, 102, 102);
+  }
+
+  .read-more-tab {
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(52, 152, 219) !important;
+    font-weight: normal;
+    font-size: 12px;
+    font-style: normal;
+    text-align: right;
+    text-decoration: underline !important;
+    position: absolute;
+    bottom: 7%;
+    right: 9%;
   }
 
   .inactive:after {
-    width: 90%;
-    margin-left: 10px;
+    width: 92%;
+    margin-left: 4%;
     height: 1px;
     content: '';
     background-color: #8a8a8a;
@@ -162,7 +205,7 @@
     left: 0;
   }
 
-  .last-active:after{
+  .last-active:after {
     width: 0 !important;
   }
 
@@ -188,7 +231,7 @@
     display: none;
   }
 
-  .rotating-image img{
+  .rotating-image img {
     width: 100%;
     height: 100%;
   }
