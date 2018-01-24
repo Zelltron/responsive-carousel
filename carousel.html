@@ -263,12 +263,9 @@
   }
 
   function itemClicks() {
-    //Item click event
     $('.title-nav-item').click(function() {
-      //remove default colours
       $('.title-nav-item').addClass('inactive').removeClass('active-slide');
       $('.rotating-image').hide();
-      //Show items based on matching ID's
       var itemID = $(this).attr('itemID');
       $('.rotating-image[itemID="' + itemID + '"]').fadeIn('fast');
       $('.title-nav-item[itemID="' + itemID + '"]').removeClass('inactive').addClass('active-slide');
